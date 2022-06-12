@@ -13,7 +13,7 @@ spark = SparkSession.builder.master("local[*]")\
 # PEGANDO DADOS DO HIVE
 dataframe_alunos = spark.sql("SELECT * FROM desafio_hive.tbl_alunos")
 
-dataframe_alunos_csv.show()
+# dataframe_alunos_csv.show()
 
 
 
@@ -22,4 +22,4 @@ dataframe_alunos_csv.show()
 dataframe_alunos.write.options(header='True', delimiter=';').csv("/input/dados/dados.csv")
 
 #SALVAR NO DISCO DO LINUX
-dataframe_alunos.write.options(header='True', delimiter=';').csv("file:///input/dados/dados.csv")
+dataframe_alunos.write.options(header='True', delimiter=';').csv("file:///input/desafio_bigdata_final_indra/dados/dados.csv")
