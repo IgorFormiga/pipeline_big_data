@@ -8,6 +8,9 @@ echo "Deletanto tabela de ALUNOS"
 beeline -u jdbc:hive2://localhost:10000 -e "DROP TABLE IF EXISTS desafio_final.TBL_CLIENTES_STG;"
 beeline -u jdbc:hive2://localhost:10000 -e "DROP TABLE IF EXISTS desafio_final.TBL_CLIENTES;"
 
+echo "Deletando tabela de DIVISAO"
+beeline -u jdbc:hive2://localhost:10000 -e "DROP TABLE IF EXISTS desafio_final.TBL_DIVISAO_STG;"
+beeline -u jdbc:hive2://localhost:10000 -e "DROP TABLE IF EXISTS desafio_final.TBL_DIVISAO;"
 
 
 # Deletando o banco de dados
