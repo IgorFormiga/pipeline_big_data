@@ -1,11 +1,5 @@
 #!/bin/bash
 
-#TARGET_DATABASE="desafio_final"
-#TARGET_TABLE="TBL_CLIENTES"
-#STAGE_TABLE="TBL_CLIENTES_STG" 
-#TARGET_DATABASE="desafio_final"
-#STAGE_DATABASE="desafio_final"
-
 TBL=$1
 INSERT_WRK=$2
 TARGET_DATABASE="desafio_final"
