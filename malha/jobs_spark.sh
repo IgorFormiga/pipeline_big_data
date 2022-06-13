@@ -4,4 +4,4 @@
 spark-submit \
     --master local[*] \
     --deploy-mode client \
-    jobs_processor.py
+    job_processor.py
