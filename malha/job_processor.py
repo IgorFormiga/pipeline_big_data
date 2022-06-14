@@ -277,15 +277,14 @@ fact_orders = spark.sql('''
 
 
 #Salvar as tabelas dimensão e fato no disco do LINUX
-DIM_Customer.coalesce(1).write.mode('overwrite')\
-    .options(header='True', delimiter=';')\
-        .csv("file:///input/desafio_bigdata_final_indra/dados/dados_saida/DIM_Customer.csv")
-DIM_Time.coalesce(1).write.mode('overwrite')\
-    .options(header='True', delimiter=';')\
-        .csv("file:///input/desafio_bigdata_final_indra/dados/dados_saida/DIM_Time.csv")
-DIM_Locality.coalesce(1).write\
-    .mode('overwrite').options(header='True', delimiter=';')\
-        .csv("file:///input/desafio_bigdata_final_indra/dados/dados_saida/DIM_Locality.csv")
-fact_orders.coalesce(1).write\
-    .mode('overwrite').options(header='True', delimiter=';')\
-        .csv("file:///input/desafio_bigdata_final_indra/dados/dados_saida/fact_orders.csv")
+# DIM_Customer.coalesce(1).write.mode('overwrite').options(header='True', delimiter=';').csv("file:///input/desafio_bigdata_final_indra/dados/dados_saida/DIM_Customer.csv")
+# DIM_Time.coalesce(1).write.mode('overwrite').options(header='True', delimiter=';').csv("file:///input/desafio_bigdata_final_indra/dados/dados_saida/DIM_Time.csv")
+# DIM_Locality.coalesce(1).write.mode('overwrite').options(header='True', delimiter=';').csv("file:///input/desafio_bigdata_final_indra/dados/dados_saida/DIM_Locality.csv")
+# fact_orders.coalesce(1).write.mode('overwrite').options(header='True', delimiter=';').csv("file:///input/desafio_bigdata_final_indra/dados/dados_saida/fact_orders.csv")
+
+
+#SALVAR NO HDFS
+DIM_Customer.coalesce(1).write.mode('overwrite').options(header='True', delimiter=';').csv("/projeto/desafio_final/dados_saida/DIM_Customer.csv")
+DIM_Time.coalesce(1).write.mode('overwrite').options(header='True', delimiter=';').csv("/projeto/desafio_final/dados_saida/DIM_Time.csv")
+DIM_Locality.coalesce(1).write.mode('overwrite').options(header='True', delimiter=';').csv("/projeto/desafio_final/dados_saida/DIM_Locality.csv")
+fact_orders.coalesce(1).write.mode('overwrite').options(header='True', delimiter=';').csv("/projeto/desafio_final/dados_saida/fact_orders.csv")

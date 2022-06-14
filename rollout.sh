@@ -8,6 +8,7 @@ hdfs dfs -mkdir -p /projeto/desafio_final/dados/DIVISAO
 hdfs dfs -mkdir -p /projeto/desafio_final/dados/ENDERECO
 hdfs dfs -mkdir -p /projeto/desafio_final/dados/REGIAO
 hdfs dfs -mkdir -p /projeto/desafio_final/dados/VENDAS
+hdfs dfs -mkdir -p /projeto/desafio_final/dados_saida
 
 # Executar o Create Tables
 echo "Executar a criação das Tabelas"
