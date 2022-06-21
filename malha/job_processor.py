@@ -267,20 +267,12 @@ fact_orders = spark.sql('''
             sk_Customer,
             sk_Time,
             sk_Locality,
-            Discount_Amount as `Discount Amount`,
             Sales_Cost_Amount as `Sales Cost Amount`,
-            Sales_Price as `Sales Price`, 
-            Sales_Quantity as `Sales Quantity`
+            (Sales_Price * Sales_Quantity) as `Sales Value`,
+            ROUND(((Sales_Price * Sales_Quantity) - Sales_Cost_Amount), 2) as `Sales Profit`
             FROM vw_tabela_desnormalizada_ST
 ''')
 
-
-
-#Salvar as tabelas dimensão e fato no disco do LINUX
-# DIM_Customer.coalesce(1).write.mode('overwrite').options(header='True', delimiter=';').csv("file:///input/desafio_bigdata_final_indra/dados/dados_saida/DIM_Customer.csv")
-# DIM_Time.coalesce(1).write.mode('overwrite').options(header='True', delimiter=';').csv("file:///input/desafio_bigdata_final_indra/dados/dados_saida/DIM_Time.csv")
-# DIM_Locality.coalesce(1).write.mode('overwrite').options(header='True', delimiter=';').csv("file:///input/desafio_bigdata_final_indra/dados/dados_saida/DIM_Locality.csv")
-# fact_orders.coalesce(1).write.mode('overwrite').options(header='True', delimiter=';').csv("file:///input/desafio_bigdata_final_indra/dados/dados_saida/fact_orders.csv")
 
 
 #SALVAR NO HDFS

@@ -4,7 +4,7 @@
 hdfs dfs -rm -r /projeto/desafio_final
 
 # Drop arquivos de tabelas salvos no HDFS
-echo "Deletanto tabela de ALUNOS"
+echo "Deletanto tabela de CLIENTES"
 beeline -u jdbc:hive2://localhost:10000 -e "DROP TABLE IF EXISTS desafio_final.TBL_CLIENTES_STG;"
 beeline -u jdbc:hive2://localhost:10000 -e "DROP TABLE IF EXISTS desafio_final.TBL_CLIENTES;"
 

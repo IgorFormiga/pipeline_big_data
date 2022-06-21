@@ -2,7 +2,6 @@
 
 # Criar pastas do HDFS para armazenar os dados:
 echo "Criando pasta desafio_final no HDFS"
-hdfs dfs -mkdir -p /projeto/desafio_final/dados
 hdfs dfs -mkdir -p /projeto/desafio_final/dados/CLIENTES
 hdfs dfs -mkdir -p /projeto/desafio_final/dados/DIVISAO
 hdfs dfs -mkdir -p /projeto/desafio_final/dados/ENDERECO
